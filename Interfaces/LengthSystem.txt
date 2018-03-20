@@ -1,0 +1,13 @@
+#ifndef LengthSystem_h
+#define LengthSystem_h
+
+#import "Converter.h"
+
+@interface LengthSystem : NSObject <Converter>
+
++(LengthSystem *) getInstance;
+-(instancetype) __unavailable init;
+
+@end
+
+#endif /* LengthSystem_h */

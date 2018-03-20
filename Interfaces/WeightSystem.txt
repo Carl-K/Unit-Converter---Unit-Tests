@@ -1,0 +1,13 @@
+#ifndef WeightSystem_h
+#define WeightSystem_h
+
+#import "Converter.h"
+
+@interface WeightSystem : NSObject <Converter>
+
++(WeightSystem *) getInstance;
+-(instancetype) __unavailable init;
+
+@end
+
+#endif /* WeightSystem_h */

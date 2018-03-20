@@ -1,0 +1,13 @@
+#ifndef TemperatureSystem_h
+#define TemperatureSystem_h
+
+#import "Converter.h"
+
+@interface TemperatureSystem : NSObject <Converter>
+
++(TemperatureSystem *) getInstance;
+-(instancetype) __unavailable init;
+
+@end
+
+#endif /* TemperatureSystem_h */

@@ -1,0 +1,12 @@
+#ifndef Converter_h
+#define Converter_h
+
+#import "Measurement.h"
+
+@protocol Converter
+
+-(double) convert: (double) valueIn ofUnit: (enum Measurement) currentUnitIn toUnit: (enum Measurement) newUnitIn;
+
+@end
+
+#endif /* Converter_h */

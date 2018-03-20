@@ -1,0 +1,13 @@
+#ifndef CapacitySystem_h
+#define CapacitySystem_h
+
+#import "Converter.h"
+
+@interface CapacitySystem : NSObject <Converter>
+
++(CapacitySystem *) getInstance;
+-(instancetype) __unavailable init;
+
+@end
+
+#endif /* CapacitySystem_h */
