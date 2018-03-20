@@ -1,0 +1,122 @@
+#import <XCTest/XCTest.h>
+
+#import "TemperatureSystem.h"
+#import "DoubleFunctions.h"
+
+@interface TemperatureTests : XCTestCase
+
+@end
+
+@implementation TemperatureTests
+{
+    TemperatureSystem *temperatureSystem;
+    
+    double result;
+}
+
+-(instancetype) initWithInvocation:(NSInvocation *)invocation
+{
+    self = [super initWithInvocation:invocation];
+    if (self)
+    {
+        temperatureSystem = [TemperatureSystem getInstance];
+    }
+    return self;
+}
+
+- (void)setUp
+{
+    [super setUp];
+}
+
+- (void)tearDown
+{
+    [super tearDown];
+}
+
+- (void)testFahrenheit
+{
+    double value = 100;
+    Measurement valueUnit = FARHENHEIT;
+    double expected[] = {100, 37.777778, 310.927780};
+    Measurement units[] = {FARHENHEIT, CELCIUS, KELVIN};
+    
+    for (int i = 0; i < 3; i++)
+    {
+        result = [temperatureSystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testCelcius
+{
+    double value = 37.777778;
+    Measurement valueUnit = CELCIUS;
+    double expected[] = {100, 37.777778, 310.927780};
+    Measurement units[] = {FARHENHEIT, CELCIUS, KELVIN};
+    
+    for (int i = 0; i < 3; i++)
+    {
+        result = [temperatureSystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testKelvin
+{
+    double value = 310.927780;
+    Measurement valueUnit = KELVIN;
+    double expected[] = {100, 37.777778, 310.927780};
+    Measurement units[] = {FARHENHEIT, CELCIUS, KELVIN};
+    
+    for (int i = 0; i < 3; i++)
+    {
+        result = [temperatureSystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+-(void) testInvalid
+{
+    Measurement wrongUnits[] =
+    {
+        //metric
+        MILLI,
+        CENTI,
+        DECI,
+        JUST,
+        DECA,
+        HECTO,
+        KILO,
+        
+        //american length
+        INCH,
+        FOOT,
+        YARD,
+        CHAIN,
+        FURLONG,
+        MILE,
+        
+        //american weight
+        OUNCE,
+        POUND,
+        TON,
+        
+        //american capacity
+        TEASPOON,
+        TABLESPOON,
+        FLUIDOUNCE,
+        CUP,
+        PINT,
+        QUART,
+        GALLON
+    };
+    
+    for (int i = 0; i < 16; i++)
+    {
+        XCTAssertThrows([temperatureSystem convert:1 ofUnit:wrongUnits[i] toUnit:FARHENHEIT]);
+        XCTAssertThrows([temperatureSystem convert:1 ofUnit:FARHENHEIT toUnit:wrongUnits[i]]);
+    }
+}
+
+@end
