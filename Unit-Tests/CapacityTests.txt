@@ -1,0 +1,256 @@
+#import <XCTest/XCTest.h>
+
+#import "CapacitySystem.h"
+#import "DoubleFunctions.h"
+
+@interface CapacityTests : XCTestCase
+
+@end
+
+@implementation CapacityTests
+{
+    CapacitySystem *capacitySystem;
+    
+    double result;
+}
+
+-(instancetype) initWithInvocation:(NSInvocation *)invocation
+{
+    self = [super initWithInvocation:invocation];
+    if (self)
+    {
+        capacitySystem = [CapacitySystem getInstance];
+    }
+    return self;
+}
+
+- (void)setUp
+{
+    [super setUp];
+}
+
+- (void)tearDown
+{
+    [super tearDown];
+}
+
+- (void) testMilliliter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testCentiliter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testDeciliter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testLiter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testDecaliter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testHectoliter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testKiloliter
+{
+    double value = 100;
+    double expected[] = {100, 10, 1, 0.1, 0.01, 0.001, 0.0001, 20.2884201813, 6.762804540369, 3.38140227018, 0.422675283773, 0.2113376418865, 0.1056688209433, 0.02641720523581};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void) testTeaspoon
+{
+    double value = 202884.202;
+    Measurement valueUnit = TEASPOON;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 202884.202, 67628.0454, 33814.0227, 4226.75284, 2113.37642, 1056.68821, 264.172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+- (void) testTablespoon
+{
+    double value = 67628.0454;
+    Measurement valueUnit = TABLESPOON;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 202884.202, 67628.0454, 33814.0227, 4226.75284, 2113.37642, 1056.68821, 264.172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+- (void) testFluidOunce
+{
+    double value = 33814.0227;
+    Measurement valueUnit = FLUIDOUNCE;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 202884.202, 67628.0454, 33814.0227, 4226.75284, 2113.37642, 1056.68821, 264.172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+- (void) testCup
+{
+    double value = 4226.75284;
+    Measurement valueUnit = CUP;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 202884.202, 67628.0454, 33814.0227, 4226.75284, 2113.37642, 1056.68821, 264.172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+- (void) testPint
+{
+    double value = 2113.37642;
+    Measurement valueUnit = PINT;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 202884.202, 67628.0454, 33814.0227, 4226.75284, 2113.37642, 1056.68821, 264.172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+- (void) testQuart
+{
+    double value = 1056.68821;
+    Measurement valueUnit = QUART;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 202884.202, 67628.0454, 33814.0227, 4226.75284, 2113.37642, 1056.68821, 264.172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+- (void) testGallon
+{
+    double value = 26.4172052;
+    Measurement valueUnit = GALLON;
+    double expected[] = {100000, 10000, 1000, 100, 10, 1, 0.1, 20288.4202, 6762.80454, 3381.40227, 422.675284, 211.337642, 105.668821, 26.4172052};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, TEASPOON, TABLESPOON, FLUIDOUNCE, CUP, PINT, QUART, GALLON};
+    
+    for (int i = 0; i < 14; i++)
+    {
+        result = [capacitySystem convert:value ofUnit:valueUnit toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :0.1]);
+    }
+}
+
+-(void) testInvalid
+{
+    Measurement wrongUnits[] =
+    {
+        //american length
+        INCH,
+        FOOT,
+        YARD,
+        CHAIN,
+        FURLONG,
+        MILE,
+        
+        //american weight
+        OUNCE,
+        POUND,
+        TON,
+        
+        //temperature
+        FARHENHEIT,
+        CELCIUS,
+        KELVIN
+    };
+    
+    for (int i = 0; i < 12; i++)
+    {
+        XCTAssertThrows([capacitySystem convert:1 ofUnit:wrongUnits[i] toUnit:MILLI]);
+        XCTAssertThrows([capacitySystem convert:1 ofUnit:MILLI toUnit:wrongUnits[i]]);
+    }
+}
+
+@end

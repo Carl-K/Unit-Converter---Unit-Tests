@@ -1,0 +1,169 @@
+#import <XCTest/XCTest.h>
+
+#import "WeightSystem.h"
+#import "DoubleFunctions.h"
+
+@interface WeightTests : XCTestCase
+
+@end
+
+@implementation WeightTests
+{
+    WeightSystem *weightSystem;
+    
+    double result;
+}
+
+-(instancetype) initWithInvocation:(NSInvocation *)invocation
+{
+    self = [super initWithInvocation:invocation];
+    if (self)
+    {
+        weightSystem = [WeightSystem getInstance];
+    }
+    return self;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    //CODE HERE
+}
+
+- (void)tearDown
+{
+    //CODE HERE
+    [super tearDown];
+}
+
+- (void)testMilligram
+{
+    double value = 1000000;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:MILLI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testCentigram
+{
+    double value = 100000;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:CENTI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testDecigram
+{
+    double value = 10000;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:DECI toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testGram
+{
+    double value = 1000;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:JUST toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testDecagram
+{
+    double value = 100;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:DECA toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testHectogram
+{
+    double value = 10;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:HECTO toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testKilogram
+{
+    double value = 1;
+    double expected[] = {1000000, 100000, 10000, 1000, 100, 10, 1, 35.2739619, 2.20462262, 0.00110231131};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:KILO toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i]]);
+    }
+}
+
+- (void)testOunce
+{
+    double value = 32000;
+    double expected[] = {907184000, 90718400, 9071840, 907184.74, 90718.474, 9071.8474, 907.18474, 32000, 2000, 1};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:OUNCE toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :1]);
+    }
+}
+
+- (void)testPound
+{
+    double value = 2000;
+    double expected[] = {907184000, 90718400, 9071840, 907184.74, 90718.474, 9071.8474, 907.18474, 32000, 2000, 1};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:POUND toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :1]);
+    }
+}
+
+- (void)testTon
+{
+    double value = 1;
+    double expected[] = {907200000, 90720000, 9072000, 907200, 90720, 9071.8474, 907.18474, 32000, 2000, 1};
+    Measurement units[] = {MILLI, CENTI, DECI, JUST, DECA, HECTO, KILO, OUNCE, POUND, TON};
+    
+    for (int i = 0; i < 10; i++)
+    {
+        result = [weightSystem convert:value ofUnit:TON toUnit:units[i]];
+        XCTAssertTrue([DoubleFunctions isEqual:result :expected[i] :1]);
+    }
+}
+
+@end

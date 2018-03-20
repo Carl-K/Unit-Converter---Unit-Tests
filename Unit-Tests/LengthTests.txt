@@ -1,0 +1,2151 @@
+#import <XCTest/XCTest.h>
+
+#import "LengthSystem.h"
+
+#import "DoubleFunctions.h"
+
+@interface LengthTests : XCTestCase
+
+@end
+
+@implementation LengthTests
+{
+    LengthSystem *lengthSystem;
+    
+    double result;
+}
+
+-(instancetype) initWithInvocation:(NSInvocation *)invocation
+{
+    self = [super initWithInvocation:invocation];
+    if (self)
+    {
+        lengthSystem = [LengthSystem getInstance];
+    }
+    return self;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    
+    result = -1;
+}
+
+- (void)tearDown
+{
+    [super tearDown];
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testMilliToMilli
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToCenti
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToDeci
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToJust
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToDeca
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToHecto
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToKilo
+{
+    double value = 1000000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToInch
+{
+    double value = 1000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToFoot
+{
+    double value = 1000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToYard
+{
+    double value = 1000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToChain
+{
+    double value = 1000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToFurlong
+{
+    double value = 1000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMilliToMile
+{
+    double value = 1000;
+    Measurement valueUnit = MILLI;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testCentiToMilli
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToCenti
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToDeci
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToJust
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToDeca
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToHecto
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToKilo
+{
+    double value = 100000;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToInch
+{
+    double value = 100;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToFoot
+{
+    double value = 100;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToYard
+{
+    double value = 100;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToChain
+{
+    double value = 100;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToFurlong
+{
+    double value = 100;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testCentiToMile
+{
+    double value = 100;
+    Measurement valueUnit = CENTI;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testDeciToMilli
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToCenti
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToDeci
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToJust
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToDeca
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToHecto
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToKilo
+{
+    double value = 10000;
+    Measurement valueUnit = DECI;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToInch
+{
+    double value = 10;
+    Measurement valueUnit = DECI;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToFoot
+{
+    double value = 10;
+    Measurement valueUnit = DECI;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToYard
+{
+    double value = 10;
+    Measurement valueUnit = DECI;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToChain
+{
+    double value = 10;
+    Measurement valueUnit = DECI;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToFurlong
+{
+    double value = 10;
+    Measurement valueUnit = DECI;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDeciToMile
+{
+    double value = 10;
+    Measurement valueUnit = DECI;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testJustToMilli
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToCenti
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToDeci
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToJust
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToDeca
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToHecto
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToKilo
+{
+    double value = 1000;
+    Measurement valueUnit = JUST;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToInch
+{
+    double value = 1;
+    Measurement valueUnit = JUST;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToFoot
+{
+    double value = 1;
+    Measurement valueUnit = JUST;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToYard
+{
+    double value = 1;
+    Measurement valueUnit = JUST;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToChain
+{
+    double value = 1;
+    Measurement valueUnit = JUST;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToFurlong
+{
+    double value = 1;
+    Measurement valueUnit = JUST;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testJustToMile
+{
+    double value = 1;
+    Measurement valueUnit = JUST;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testDecaToMilli
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToCenti
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToDeci
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToJust
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToDeca
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToHecto
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToKilo
+{
+    double value = 100;
+    Measurement valueUnit = DECA;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToInch
+{
+    double value = 0.1;
+    Measurement valueUnit = DECA;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToFoot
+{
+    double value = 0.1;
+    Measurement valueUnit = DECA;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToYard
+{
+    double value = 0.1;
+    Measurement valueUnit = DECA;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToChain
+{
+    double value = 0.1;
+    Measurement valueUnit = DECA;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToFurlong
+{
+    double value = 0.1;
+    Measurement valueUnit = DECA;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testDecaToMile
+{
+    double value = 0.1;
+    Measurement valueUnit = DECA;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testHectoToMilli
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToCenti
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToDeci
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToJust
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToDeca
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToHecto
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToKilo
+{
+    double value = 10;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToInch
+{
+    double value = 0.01;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToFoot
+{
+    double value = 0.01;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToYard
+{
+    double value = 0.01;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToChain
+{
+    double value = 0.01;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToFurlong
+{
+    double value = 0.01;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testHectoToMile
+{
+    double value = 0.01;
+    Measurement valueUnit = HECTO;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testKiloToMilli
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 1000000;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToCenti
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 100000;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToDeci
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 10000;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToJust
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 1000;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToDeca
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 100;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToHecto
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 10;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToKilo
+{
+    double value = 1;
+    Measurement valueUnit = KILO;
+    
+    double expected = 1;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToInch
+{
+    double value = 0.001;
+    Measurement valueUnit = KILO;
+    
+    double expected = 39.3701;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToFoot
+{
+    double value = 0.001;
+    Measurement valueUnit = KILO;
+    
+    double expected = 3.28084;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToYard
+{
+    double value = 0.001;
+    Measurement valueUnit = KILO;
+    
+    double expected = 1.09361;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToChain
+{
+    double value = 0.001;
+    Measurement valueUnit = KILO;
+    
+    double expected = 0.0497097;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToFurlong
+{
+    double value = 0.001;
+    Measurement valueUnit = KILO;
+    
+    double expected = 0.00497096;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testKiloToMile
+{
+    double value = 0.001;
+    Measurement valueUnit = KILO;
+    
+    double expected = 0.000621371;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testInchToMilli
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 25.4;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToCenti
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 2.54;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToDeci
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 0.254;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToJust
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 0.0254;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToDeca
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 0.00254;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToHecto
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 0.000254;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToKilo
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 0.0000254;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToInch
+{
+    double value = 1;
+    Measurement valueUnit = INCH;
+    
+    double expected = 1;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToFoot
+{
+    double value = 12;
+    Measurement valueUnit = INCH;
+    
+    double expected = 1;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToYard
+{
+    double value = 36;
+    Measurement valueUnit = INCH;
+    
+    double expected = 1;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToChain
+{
+    double value = 792;
+    Measurement valueUnit = INCH;
+    
+    double expected = 1;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToFurlong
+{
+    double value = 7920.02;
+    Measurement valueUnit = INCH;
+    
+    double expected = 1;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testInchToMile
+{
+    double value = 63360;
+    Measurement valueUnit = INCH;
+    
+    double expected = 1;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testFootToMilli
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 304.8;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToCenti
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 30.48;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToDeci
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 3.048;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToJust
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 0.3048;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToDeca
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 0.03048;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToHecto
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 0.003048;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToKilo
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 0.0003048;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToInch
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 12;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToFoot
+{
+    double value = 1;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 1;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToYard
+{
+    double value = 3;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 1;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToChain
+{
+    double value = 66;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 1;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToFurlong
+{
+    double value = 660.001;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 1;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFootToMile
+{
+    double value = 5280;
+    Measurement valueUnit = FOOT;
+    
+    double expected = 1;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testYardToMilli
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 914.4;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToCenti
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 91.44;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToDeci
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 9.144;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToJust
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.9144;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToDeca
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.09144;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToHecto
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.009144;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToKilo
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.0009144;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToInch
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 36;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToFoot
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 3;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToYard
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 1;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToChain
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.0454545;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToFurlong
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.00454545;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testYardToMile
+{
+    double value = 1;
+    Measurement valueUnit = YARD;
+    
+    double expected = 0.000568182;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testChainToMilli
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 20116.8;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToCenti
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 2011.68;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToDeci
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 201.168;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToJust
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 20.1168;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToDeca
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 2.01168;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToHecto
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 0.201168;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToKilo
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 0.0201168;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToInch
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 792;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToFoot
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 66;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToYard
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 22;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToChain
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 1;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToFurlong
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 0.0999998;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testChainToMile
+{
+    double value = 1;
+    Measurement valueUnit = CHAIN;
+    
+    double expected = 0.0125;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testFurlongToMilli
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 201168;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToCenti
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 20116.8;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToDeci
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 2011.68;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToJust
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 201.168;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToDeca
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 20.1168;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToHecto
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 2.01168;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToKilo
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 0.201168;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToInch
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 7920.02;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToFoot
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 660.001;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToYard
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 220;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToChain
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 10;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToFurlong
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 1;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testFurlongToMile
+{
+    double value = 1;
+    Measurement valueUnit = FURLONG;
+    
+    double expected = 0.125;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+//---------------
+//---------------
+//---------------
+
+- (void)testMileToMilli
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 1609344;
+    Measurement finalUnit = MILLI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToCenti
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 160934.4;
+    Measurement finalUnit = CENTI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToDeci
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 16093.44;
+    Measurement finalUnit = DECI;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToJust
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 1609.344;
+    Measurement finalUnit = JUST;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToDeca
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 160.9344;
+    Measurement finalUnit = DECA;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToHecto
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 16.09344;
+    Measurement finalUnit = HECTO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToKilo
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 1.60934;
+    Measurement finalUnit = KILO;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToInch
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 63360;
+    Measurement finalUnit = INCH;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToFoot
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 5280;
+    Measurement finalUnit = FOOT;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToYard
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 1760;
+    Measurement finalUnit = YARD;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToChain
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 80;
+    Measurement finalUnit = CHAIN;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToFurlong
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 8;
+    Measurement finalUnit = FURLONG;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+- (void)testMileToMile
+{
+    double value = 1;
+    Measurement valueUnit = MILE;
+    
+    double expected = 1;
+    Measurement finalUnit = MILE;
+    
+    result = [lengthSystem convert:value ofUnit:valueUnit toUnit:finalUnit];
+    XCTAssertTrue([DoubleFunctions isEqual:result :expected]);
+}
+
+-(void) testInvalid
+{
+    Measurement wrongUnits[] =
+    {
+        //american weight
+        OUNCE,
+        POUND,
+        TON,
+        
+        //american capacity
+        TEASPOON,
+        TABLESPOON,
+        FLUIDOUNCE,
+        CUP,
+        PINT,
+        QUART,
+        GALLON,
+        
+        //temperature
+        FARHENHEIT,
+        CELCIUS,
+        KELVIN
+    };
+    
+    for (int i = 0; i < 13; i++)
+    {
+        XCTAssertThrows([lengthSystem convert:1 ofUnit:wrongUnits[i] toUnit:MILLI]);
+        XCTAssertThrows([lengthSystem convert:1 ofUnit:MILLI toUnit:wrongUnits[i]]);
+    }
+}
+
+@end
