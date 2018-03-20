@@ -1,0 +1,43 @@
+#ifndef Measurement_h
+#define Measurement_h
+
+typedef enum Measurement : int
+{
+    //metric
+    MILLI,
+    CENTI,
+    DECI,
+    JUST,
+    DECA,
+    HECTO,
+    KILO,
+    
+    //american length
+    INCH,
+    FOOT,
+    YARD,
+    CHAIN,
+    FURLONG,
+    MILE,
+    
+    //american weight
+    OUNCE,
+    POUND,
+    TON,
+    
+    //american capacity
+    TEASPOON,
+    TABLESPOON,
+    FLUIDOUNCE,
+    CUP,
+    PINT,
+    QUART,
+    GALLON,
+    
+    //temperature
+    FARHENHEIT,
+    CELCIUS,
+    KELVIN
+} Measurement;
+
+#endif /* Measurement_h */
