@@ -1,0 +1,181 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red196\green26\blue22;\red0\green0\blue0;
+\red170\green13\blue145;\red92\green38\blue153;\red63\green110\blue116;\red46\green13\blue110;\red38\green71\blue75;
+\red0\green116\blue0;\red28\green0\blue207;}
+{\*\expandedcolortbl;;\csgenericrgb\c39100\c22000\c12500;\csgenericrgb\c77000\c10200\c8600;\csgenericrgb\c0\c0\c0;
+\csgenericrgb\c66500\c5200\c56900;\csgenericrgb\c35900\c14900\c60100;\csgenericrgb\c24700\c43100\c45600;\csgenericrgb\c18100\c5200\c43100;\csgenericrgb\c14900\c27800\c29400;
+\csgenericrgb\c0\c45600\c0;\csgenericrgb\c11000\c0\c81000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab543
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 #import \cf3 <XCTest/XCTest.h>\cf2 \
+\cf4 \
+\cf2 #import \cf3 "WeightSystem.h"\cf2 \
+#import \cf3 "DoubleFunctions.h"\cf2 \
+\cf4 \
+\cf5 @interface\cf4  WeightTests : \cf6 XCTestCase\cf4 \
+\
+\cf5 @end\cf4 \
+\
+\cf5 @implementation\cf4  WeightTests\
+\{\
+    \cf7 WeightSystem\cf4  *weightSystem;\
+    \
+    \cf5 double\cf4  result;\
+\}\
+\
+-(\cf5 instancetype\cf4 ) initWithInvocation:(\cf6 NSInvocation\cf4  *)invocation\
+\{\
+    \cf5 self\cf4  = [\cf5 super\cf4  \cf8 initWithInvocation\cf4 :invocation];\
+    \cf5 if\cf4  (\cf5 self\cf4 )\
+    \{\
+        \cf7 weightSystem\cf4  = [\cf7 WeightSystem\cf4  \cf9 getInstance\cf4 ];\
+    \}\
+    \cf5 return\cf4  \cf5 self\cf4 ;\
+\}\
+\
+- (\cf5 void\cf4 )setUp\
+\{\
+    [\cf5 super\cf4  \cf8 setUp\cf4 ];\
+    \cf10 //CODE HERE\cf4 \
+\}\
+\
+- (\cf5 void\cf4 )tearDown\
+\{\
+    \cf10 //CODE HERE\cf4 \
+    [\cf5 super\cf4  \cf8 tearDown\cf4 ];\
+\}\
+\
+- (\cf5 void\cf4 )testMilligram\
+\{\
+    \cf5 double\cf4  value = \cf11 1000000\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 MILLI\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testCentigram\
+\{\
+    \cf5 double\cf4  value = \cf11 100000\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 CENTI\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testDecigram\
+\{\
+    \cf5 double\cf4  value = \cf11 10000\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 DECI\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testGram\
+\{\
+    \cf5 double\cf4  value = \cf11 1000\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 JUST\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testDecagram\
+\{\
+    \cf5 double\cf4  value = \cf11 100\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 DECA\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testHectogram\
+\{\
+    \cf5 double\cf4  value = \cf11 10\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 HECTO\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testKilogram\
+\{\
+    \cf5 double\cf4  value = \cf11 1\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 1000000\cf4 , \cf11 100000\cf4 , \cf11 10000\cf4 , \cf11 1000\cf4 , \cf11 100\cf4 , \cf11 10\cf4 , \cf11 1\cf4 , \cf11 35.2739619\cf4 , \cf11 2.20462262\cf4 , \cf11 0.00110231131\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 KILO\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i]]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testOunce\
+\{\
+    \cf5 double\cf4  value = \cf11 32000\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 907184000\cf4 , \cf11 90718400\cf4 , \cf11 9071840\cf4 , \cf11 907184.74\cf4 , \cf11 90718.474\cf4 , \cf11 9071.8474\cf4 , \cf11 907.18474\cf4 , \cf11 32000\cf4 , \cf11 2000\cf4 , \cf11 1\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 OUNCE\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i] :\cf11 1\cf4 ]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testPound\
+\{\
+    \cf5 double\cf4  value = \cf11 2000\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 907184000\cf4 , \cf11 90718400\cf4 , \cf11 9071840\cf4 , \cf11 907184.74\cf4 , \cf11 90718.474\cf4 , \cf11 9071.8474\cf4 , \cf11 907.18474\cf4 , \cf11 32000\cf4 , \cf11 2000\cf4 , \cf11 1\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 POUND\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i] :\cf11 1\cf4 ]);\
+    \}\
+\}\
+\
+- (\cf5 void\cf4 )testTon\
+\{\
+    \cf5 double\cf4  value = \cf11 1\cf4 ;\
+    \cf5 double\cf4  expected[] = \{\cf11 907200000\cf4 , \cf11 90720000\cf4 , \cf11 9072000\cf4 , \cf11 907200\cf4 , \cf11 90720\cf4 , \cf11 9071.8474\cf4 , \cf11 907.18474\cf4 , \cf11 32000\cf4 , \cf11 2000\cf4 , \cf11 1\cf4 \};\
+    \cf7 Measurement\cf4  units[] = \{\cf9 MILLI\cf4 , \cf9 CENTI\cf4 , \cf9 DECI\cf4 , \cf9 JUST\cf4 , \cf9 DECA\cf4 , \cf9 HECTO\cf4 , \cf9 KILO\cf4 , \cf9 OUNCE\cf4 , \cf9 POUND\cf4 , \cf9 TON\cf4 \};\
+    \
+    \cf5 for\cf4  (\cf5 int\cf4  i = \cf11 0\cf4 ; i < \cf11 10\cf4 ; i++)\
+    \{\
+        \cf7 result\cf4  = [\cf7 weightSystem\cf4  \cf9 convert\cf4 :value \cf9 ofUnit\cf4 :\cf9 TON\cf4  \cf9 toUnit\cf4 :units[i]];\
+        \cf2 XCTAssertTrue\cf4 ([\cf7 DoubleFunctions\cf4  \cf9 isEqual\cf4 :\cf7 result\cf4  :expected[i] :\cf11 1\cf4 ]);\
+    \}\
+\}\
+\
+\cf5 @end}
