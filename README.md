@@ -8,4 +8,4 @@ LengthTests has a test function for each type of exlipcit length conversion whil
 
 testing embedding gif:
 
-![gif of app running, from gfycat](https://gfycat.com/brilliantlightheartedfruitfly-people-blogs-carl-kruk.gif)
+![](https://gfycat.com/brilliantlightheartedfruitfly-people-blogs-carl-kruk.gif)
