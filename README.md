@@ -8,4 +8,4 @@ LengthTests has a test function for each type of exlipcit length conversion whil
 
 testing embedding gif:
 
-<iframe src='https://gfycat.com/ifr/BrilliantLightheartedFruitfly' frameborder='0' scrolling='no' allowfullscreen width='640' height='524'></iframe><p> <a href="https://gfycat.com/brilliantlightheartedfruitfly-people-blogs-carl-kruk">via Gfycat</a></p>
+![](https://gfycat.com/ifr/BrilliantLightheartedFruitfly)
